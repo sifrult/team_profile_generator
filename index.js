@@ -6,6 +6,8 @@ const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js');
 
+
+
 // Manager input questions
 function addManager() {
     inquirer .prompt([
@@ -32,10 +34,14 @@ function addManager() {
     ])
     .then ((data) => {
         console.log(data);
+        fs.writeFile('newHTML.html', generateHTML(data), (err) =>
+        err ? console.log(err) : console.log('Manager added'))
+
         addEmployee();
     })
 
 }
+
 
 // Ask to input other empoyees
 function addEmployee() {
@@ -56,7 +62,7 @@ function addEmployee() {
     })
 }
 
-// Add an engineer
+// // Add an engineer
 function addEngineer() {
     inquirer .prompt ([
         {
@@ -86,7 +92,7 @@ function addEngineer() {
     })
 }
 
-// Add an intern
+// // Add an intern
 function addIntern() {
     inquirer .prompt([
         {

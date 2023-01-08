@@ -6,7 +6,7 @@ const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js');
 
-
+const team = [];
 
 // Manager input questions
 function addManager() {
@@ -33,13 +33,12 @@ function addManager() {
     }
     ])
     .then ((data) => {
-        console.log(data);
-        fs.writeFile('newHTML.html', generateHTML(data), (err) =>
-        err ? console.log(err) : console.log('Manager added'))
 
+        const manager = new Manager(data.name, data.id, data.email, data.officeNumber);
+        team.push(manager);
         addEmployee();
-    })
 
+    })
 }
 
 
@@ -58,6 +57,9 @@ function addEmployee() {
             addEngineer();
         } else if (data.question === 'Add an intern') {
             addIntern();
+        } else {
+            fs.writeFile('newHTML.html', generateHTML(team), (err) =>
+            err ? console.log(err) : console.log('Success!'))
         }
     })
 }
@@ -82,12 +84,13 @@ function addEngineer() {
         },
         {
             type: 'input',
-            name: 'officeNumber',
+            name: 'gitHub',
             message: "What is the engineer's GitHub username?",
         }
     ])
     .then ((data) => {
-        console.log(data);
+        const engineer = new Engineer(data.name, data.id, data.email, data.gitHub);
+        team.push(engineer);
         addEmployee();
     })
 }
@@ -112,12 +115,13 @@ function addIntern() {
         },
         {
             type: 'input',
-            name: 'officeNumber',
+            name: 'school',
             message: "What is the intern's school?",
         }
     ])
     .then ((data) => {
-        console.log(data);
+        const intern = new Intern(data.name, data.id, data.email, data.school);
+        team.push(intern);
         addEmployee();
     })
 }

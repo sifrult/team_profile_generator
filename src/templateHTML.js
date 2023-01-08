@@ -1,9 +1,18 @@
 
 
-function renderTeam(data) {
-    console.log(data.name)
-    console.log(data.id)
-    return "it worked"
+const renderTeam = (team) => {
+   const renderManager = (manager) => {
+        return `${manager.name}`
+    };
+
+    html = [];
+
+    html.push(team.filter(employee => employee.getRole() === "Manager").map(manager => renderManager(manager)))
+
+
+
+return html;
 }
 
-module.exports = renderTeam;
+const renderWholeTeam = (team) => `${renderTeam(team)}`
+module.exports = renderWholeTeam;

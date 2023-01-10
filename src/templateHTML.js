@@ -9,7 +9,7 @@ const renderTeam = (team) => {
         </div>
         <div id="card-info">
             <p>ID: ${manager.id}</p>
-            <p>Email: ${manager.email}</p>
+            <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
             <p>Office number: ${manager.officeNumber}</p>
         </div>
     </div>`
@@ -23,7 +23,7 @@ const renderTeam = (team) => {
         </div>
         <div id="card-info">
             <p>ID: ${engineer.id}</p>
-            <p>Email: ${engineer.email}</p>
+            <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
             <p>GtHub: ${engineer.gitHub}</p>
         </div>
     </div>`
@@ -38,7 +38,7 @@ const renderTeam = (team) => {
         </div>
         <div id="card-info">
             <p>ID: ${intern.id}</p>
-            <p>Email: ${intern.email}</p>
+            <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
             <p>School: ${intern.school}</p>
         </div>
     </div>`

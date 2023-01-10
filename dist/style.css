@@ -63,6 +63,15 @@ header {
     margin: 5px 0;
 }
 
+a {
+    text-decoration: none;
+    color: var(--blue)
+}
+
+a:hover {
+    font-weight: bold;
+}
+
 @media  screen and (min-width: 450px) {
     #card {
         width: 40%;

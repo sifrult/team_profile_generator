@@ -46,9 +46,9 @@ const renderTeam = (team) => {
 
     // After creating cards, join them all together in an array
     html = [];
-    html.push(team.filter(employee => employee.getRole() === "Manager").map(manager => renderManager(manager)))
-    html.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => renderEngineer(engineer).join("")))
-    html.push(team.filter(employee => employee.getRole() === "Intern").map(intern => renderIntern(intern).join("")))
+    html.push(team.filter(employee => employee.getRole() === "Manager").map(manager => renderManager(manager)));
+    html.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => renderEngineer(engineer)).join(""));
+    html.push(team.filter(employee => employee.getRole() === "Intern").map(intern => renderIntern(intern)).join(""))
 
     return html.join("");
 }

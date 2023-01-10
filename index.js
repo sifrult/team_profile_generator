@@ -58,7 +58,7 @@ function addEmployee() {
         } else if (data.question === 'Add an intern') {
             addIntern();
         } else {
-            fs.writeFile('newHTML.html', generateHTML(team), (err) =>
+            fs.writeFile('./dist/newHTML.html', generateHTML(team), (err) =>
             err ? console.log(err) : console.log('Success!'))
         }
     })

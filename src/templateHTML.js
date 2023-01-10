@@ -24,7 +24,7 @@ const renderTeam = (team) => {
         <div id="card-info">
             <p>ID: ${engineer.id}</p>
             <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-            <p>GtHub: ${engineer.gitHub}</p>
+            <p>GitHub: <a href="https://github.com/${engineer.gitHub}" target="_blank">${engineer.gitHub}</a></p>
         </div>
     </div>`
     }

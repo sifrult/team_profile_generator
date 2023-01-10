@@ -10,27 +10,47 @@ const renderTeam = (team) => {
         <div id="card-info">
             <p>ID: ${manager.id}</p>
             <p>Email: ${manager.email}</p>
-            <p>Office number ${manager.officeNumber}</p>
+            <p>Office number: ${manager.officeNumber}</p>
         </div>
     </div>`
     };
 
     const renderEngineer = (engineer) => {
-        return `${engineer.name}`
+        return `    <div id="card">
+        <div id="card-title" class="engineer">
+            <h2>${engineer.name}</h2>
+            <p>Engineer</p>
+        </div>
+        <div id="card-info">
+            <p>ID: ${engineer.id}</p>
+            <p>Email: ${engineer.email}</p>
+            <p>GtHub: ${engineer.gitHub}</p>
+        </div>
+    </div>`
     }
 
 
     const renderIntern = (intern) => {
-        return `${intern.name}`
+        return `    <div id="card">
+        <div id="card-title" class="intern">
+            <h2>${intern.name}</h2>
+            <p>Intern</p>
+        </div>
+        <div id="card-info">
+            <p>ID: ${intern.id}</p>
+            <p>Email: ${intern.email}</p>
+            <p>School: ${intern.school}</p>
+        </div>
+    </div>`
     }
 
     // After creating cards, join them all together in an array
     html = [];
     html.push(team.filter(employee => employee.getRole() === "Manager").map(manager => renderManager(manager)))
-    html.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => renderEngineer(engineer)))
-    html.push(team.filter(employee => employee.getRole() === "Intern").map(intern => renderIntern(intern)))
+    html.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => renderEngineer(engineer).join("")))
+    html.push(team.filter(employee => employee.getRole() === "Intern").map(intern => renderIntern(intern).join("")))
 
-    return html;
+    return html.join("");
 }
 
 const renderWholeTeam = (team) =>
@@ -48,7 +68,9 @@ const renderWholeTeam = (team) =>
     <header>
         <h1>My Team</h1>
     </header>
-    <div id="employees">${renderTeam(team)}</div>
+    <div id="employees">
+        ${renderTeam(team)}
+    </div>
 </body>
 </html>`
 

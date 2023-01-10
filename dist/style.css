@@ -10,6 +10,8 @@
 
 body {
     background-color: var(--light-gray);
+    font-family: 'Mukta Malar', sans-serif;
+    overflow: hidden;
 }
 
 header {

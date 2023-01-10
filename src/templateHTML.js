@@ -5,7 +5,7 @@ const renderTeam = (team) => {
         return `    <div id="card">
         <div id="card-title" class="manager">
             <h2>${manager.name}</h2>
-            <p>Manager</p>
+            <p>> Manager</p>
         </div>
         <div id="card-info">
             <p>ID: ${manager.id}</p>
@@ -19,7 +19,7 @@ const renderTeam = (team) => {
         return `    <div id="card">
         <div id="card-title" class="engineer">
             <h2>${engineer.name}</h2>
-            <p>Engineer</p>
+            <p>> Engineer</p>
         </div>
         <div id="card-info">
             <p>ID: ${engineer.id}</p>
@@ -34,7 +34,7 @@ const renderTeam = (team) => {
         return `    <div id="card">
         <div id="card-title" class="intern">
             <h2>${intern.name}</h2>
-            <p>Intern</p>
+            <p>> Intern</p>
         </div>
         <div id="card-info">
             <p>ID: ${intern.id}</p>
@@ -62,6 +62,7 @@ const renderWholeTeam = (team) =>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar&display=swap" rel="stylesheet">
     <title>Team Profile</title>
 </head>
 <body>

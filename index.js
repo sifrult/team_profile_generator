@@ -59,7 +59,7 @@ function addEmployee() {
             addIntern();
         } else {
             fs.writeFile('./dist/newHTML.html', generateHTML(team), (err) =>
-            err ? console.log(err) : console.log('Success!'))
+            err ? console.log(err) : console.log('Your HTML page has been created in the /dist folder.'))
         }
     })
 }
